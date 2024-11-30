@@ -16,7 +16,7 @@
       <p><strong>Genre:</strong> ${book.genre}</p>
       <p><strong>Content:</strong> ${book.content}</p>
       <p><strong>Stock:</strong> ${book.stock}</p>
-      <p><strong>Date:</strong> ${book.createDate}</p>
+      <p><strong>CreateDate:</strong> ${book.createDate}</p>
 
       <a href="${pageContext.request.contextPath}/books/list" class="btn btn-primary">Back to List</a>
     </div>
