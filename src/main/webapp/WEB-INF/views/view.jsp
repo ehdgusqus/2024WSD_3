@@ -11,11 +11,13 @@
   <h1 class="text-center">Book Details</h1>
   <div class="card mt-4">
     <div class="card-body">
-      <p><strong>ID:</strong> ${book.id}</p>
       <p><strong>Title:</strong> ${book.title}</p>
       <p><strong>Writer:</strong> ${book.writer}</p>
       <p><strong>Genre:</strong> ${book.genre}</p>
+      <p><strong>Content:</strong> ${book.content}</p>
       <p><strong>Stock:</strong> ${book.stock}</p>
+      <p><strong>Date:</strong> ${book.createDate}</p>
+
       <a href="${pageContext.request.contextPath}/books/list" class="btn btn-primary">Back to List</a>
     </div>
   </div>
