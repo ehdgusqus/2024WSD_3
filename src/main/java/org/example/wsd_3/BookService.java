@@ -13,17 +13,17 @@ public class BookService {
         this.bookDAO = bookDAO;
     }
 
-    // 1. 모든 책 조회
+    // 모든 책 조회
     public List<BookVO> getAllBooks() {
         return bookDAO.findAllBooks(); // DAO 호출하여 모든 책 반환
     }
 
-    // 2. 특정 책 조회
+    // 특정 책 조회
     public BookVO getBookById(int id) {
         return bookDAO.findBookById(id); // DAO 호출하여 ID로 책 반환
     }
 
-    // 3. 새 책 추가
+    // 새 책 추가
     public void addBook(BookVO book) {
         boolean isSaved = bookDAO.saveBook(book);
         if (!isSaved) {
@@ -32,7 +32,7 @@ public class BookService {
     }
 
 
-    // 4. 책 정보 수정
+    // 책 정보 수정
     public void updateBook(BookVO book) {
         boolean isUpdate = bookDAO.updateBook(book); // DAO 호출하여 책 정보 수정
         if(!isUpdate) {
@@ -40,11 +40,17 @@ public class BookService {
         }
     }
 
-    // 5. 책 삭제
+    // 책 삭제
     public void deleteBook(int id) {
         boolean isDelete = bookDAO.deleteBook(id); // DAO 호출하여 책 삭제
         if(!isDelete){
             throw new RuntimeException("Failed to delete the book.");
         }
     }
+
+    // 검색
+    public List<BookVO> searchBooks(String keyword) {
+        return bookDAO.searchBooks(keyword); // DAO 호출하여 검색 수행
+    }
+
 }
